@@ -9,6 +9,12 @@ verify_ssl = true
 jupyterlab = "*"
 jupyter-contrib-nbextensions = "*"
 jupyter-nbextensions-configurator = "*"
+yapf = "*"
+certifi = "*"
+requests = "*"
+beautifulsoup = "*"
+bs4 = "*"
+beautifulsoup4 = "*"
 
 [requires]
 python_version = "3.7"
