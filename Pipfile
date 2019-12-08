@@ -12,9 +12,7 @@ jupyter-nbextensions-configurator = "*"
 yapf = "*"
 certifi = "*"
 requests = "*"
-beautifulsoup = "*"
 bs4 = "*"
-beautifulsoup4 = "*"
 pyperclip = "*"
 
 [requires]
