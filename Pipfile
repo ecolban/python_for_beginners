@@ -19,6 +19,7 @@ pandoc = "*"
 matplotlib = "*"
 sklearn = "*"
 plotly = "*"
+xlrd = "*"
 
 [requires]
 python_version = "3.7"
