@@ -2,11 +2,7 @@
 
 ## Prerequisites
 
-You need to have python3 installed on your computer. On a Mac, this can be done with the following command in a terminal window:
-
-```console
-> brew install python3
-```
+You need to have python3 installed on your computer. Install python3 from python.org
 
 You also need a python package called `pipenv` installed:
 
@@ -26,18 +22,6 @@ You should also have git installed:
 > brew install git
 ```
 
-## Cloning the `python_for_beginners` repository
-
-
-The remote repository is at: `https://stash.ec2.local/scm/~erik.colban/python_for_beginners.git`.
-
-Navigate to the folder where you want to have your local copy of the repository. Clone the repository with:
-
-```console
-> git clone https://stash.ec2.local/scm/~erik.colban/python_for_beginners.git
-```
-
-You can also use [SourceTree](https://www.sourcetreeapp.com) to clone the repository.
 
 ## Create a virtual environment
 
