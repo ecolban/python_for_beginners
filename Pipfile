@@ -7,19 +7,11 @@ verify_ssl = true
 pytest = "*"
 
 [packages]
-jupyterlab = "*"
+jupyter = "*"
 jupyter-contrib-nbextensions = "*"
 jupyter-nbextensions-configurator = "*"
 yapf = "*"
 certifi = "*"
-requests = "*"
-bs4 = "*"
-pyperclip = "*"
-pandoc = "*"
-matplotlib = "*"
-sklearn = "*"
-plotly = "*"
-xlrd = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.12"
