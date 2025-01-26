@@ -1,15 +1,16 @@
 from collections import Counter
 from collections.abc import Iterable
-from functools import partial
 from math import log
+from wordlebot_solutions import SOLUTIONS
 
-with open('wordle-La.txt') as f:
-    WORDS_LA: list[str] = [w.strip() for w in f]
+guesses = SOLUTIONS['normal-simple']['guesses']
+WORDS = guesses.keys()
 
+with open('wordle-Ta.txt') as f:
+    WORDS_ALLOWED: set[str] = WORDS | {w.strip() for w in f}
 
 def find_words(guesses: Iterable[tuple[str, str]]) -> list[str]:
-    words = [word for word in WORDS_LA if all(feedback(guess, word) == fb for guess, fb in guesses)]
-    return words
+    return [word for word in WORDS if all(feedback(guess, word) == fb for guess, fb in guesses)]
 
 
 def feedback(guess: str, word: str) -> str:
@@ -24,15 +25,18 @@ def feedback(guess: str, word: str) -> str:
 def info(guess: str, words: list[str]) -> float:
     n = len(words)
     c = Counter(feedback(guess, word) for word in words)
-    return sum(-(p := v / n) * log(p) for v in c.values())
+    return sum((p := v / n) * -log(p, 2) for v in c.values())
 
 
 if __name__ == '__main__':
+    print(len(WORDS))
+    print(len(WORDS_ALLOWED))
     words = find_words([
-        ('raise', 'r__sE'),
-        ('perch', '_er_h'),
+        ('raise', '__is_'),
+        ('south', 'S_U__'),
     ])
-    print(words)
-    best = sorted(((info(guess, words), guess) for guess in WORDS_LA), reverse=True)
-    print(best[:10])
-
+    print(len(words), words)
+    best_overall = sorted(((info(guess, words), guess) for guess in WORDS), reverse=True)
+    best_possible_only = sorted(((info(guess, words), guess) for guess in words), reverse=True)
+    print(f'{best_possible_only[:5]}')
+    print(f'{best_overall[:5]}')

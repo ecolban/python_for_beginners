@@ -7,11 +7,13 @@ verify_ssl = true
 pytest = "*"
 
 [packages]
+certifi = "*"
 jupyter = "*"
 jupyter-contrib-nbextensions = "*"
 jupyter-nbextensions-configurator = "*"
+matplotlib = "*"
+scikit-learn = "*"
 yapf = "*"
-certifi = "*"
 
 [requires]
 python_version = "3.12"
